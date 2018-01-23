@@ -1,0 +1,310 @@
+﻿@using GreenSol.Domain.Entities
+@model IEnumerable<Album>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<link href="~/Content/index/slider.css" rel="stylesheet" />
+
+<section class="home-wrapper">
+    <div class="fold home">
+        @*<div class="brand" style="padding: 15% 50% 0 26.5%;">
+            <p style="border: 3px #2c2d33 solid;
+                padding: 10px 43px;
+                color: #2c2d33;
+                font-size: 117px;
+                font-family: monospace;">
+                GREENSOL</p>
+        </div>*@
+    </div>
+</section>
+<section class="js-content">
+    <div class="row fold">
+        <div class="vw50 description-graphic"> 
+            <img id="js-daily-deal-img" class="image-cover js-back" alt="image-cover">
+            <div id="top-sale" class="image-container js-front js-active">
+                <div class="slider">
+                    <div class="mask">
+                        <ul>
+                            @for (int i = 0; i < Model.Count(); i++)
+                            {
+                                <li id="li-@(i+1)" class="animation-@(i+1)">
+                                    <img src="~/Content/index/trans-back1.svg">
+                                    <img alt="Model.ElementAt(@i).AlbumId" src="@Url.Action("GetImage", "Album", new { Model.ElementAt(i).AlbumId })" />
+                                    <div class="tooltip"> <h1>@Model.ElementAt(i).Name</h1> </div>
+                                </li>                               
+                            }                                                       
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="js-cd-cover" class="image-container">
+                <img src="~/Content/index/trans-back2.svg">
+                <img id="cd" src="~/Content/index/Images/vinyl.png">
+            </div>
+        </div>
+
+        <div class="vw50 js-text-wrapper description-text-right">
+            <div id="top-albums-text" class="js-active">
+                <h2 class="fix-space-ie">Top selling albums</h2>
+                <ul class="text">
+                    @for (int i = 0; i < Model.Count(); i++)
+                    {
+                        <li>
+                            @(i + 1). <a href="@Url.Action("AlbumDetails", "Album", new { albumId = Model.ElementAt(i).AlbumId })">@(Model.ElementAt(i).Name + " - " + Model.ElementAt(i).Artist.Name)</a>   
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div id="js-daily-deal-album">
+                <h2 class="fix-space-ie">Daily deal</h2>
+                <p class="text">
+                    Are you ready for the daily happy click ?
+                    Just click the below button and get the surprise !
+                </p>
+
+                <div id="js-daily-deal" style="margin-left:-10px;">
+                    @Ajax.ActionLink("Click here to see today's special!",
+                        "DailyDeal",
+                        null,
+                        new AjaxOptions
+                        {
+                            UpdateTargetId = "js-daily-deal",
+                            InsertionMode = InsertionMode.Replace,
+                            HttpMethod = "GET",
+                            OnSuccess = "getDeal"
+                        },
+                        new { @class = "myButton2 green2" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row fold">
+        <div class="vw50 js-text-wrapper description-text-left" style="padding-top: 20%;">
+            <div style="position: relative; top: 25vh;">
+                <div class="feature-wrapper">
+                    <div class="feature js-active" id="js-pFt1">
+                        <h2 class="fix-space-ie">Membership special offers<br></h2>
+                        <p class="text">
+                            Become a member to get a special album every day at an amazing price. So, join us and grab your favorite artists!
+                        </p>
+                    </div>
+                    <div class="feature" id="js-pFt2" style="transform: translate3d(0%, 0%, 0%);">
+                        <h2 class="fix-space-ie">Superior quality products</h2>
+                        <p class="text">
+                            We provide the highest quality stereo and 5.1 premastering, lossless CDs, Enhanced CDs, DVDs come with Bluray quality (resolution up to 4K) and high-end vinyls.
+                        </p>
+                    </div>
+                    <div class="feature" id="js-pFt3" style="transform: translate3d(0%, 0%, 0%)">
+                        <a href="~/Album/List" class="startBtn btn" style="width: 85px;height: 50px;">Start now</a>
+                    </div>
+                </div>
+                <div class="pager" style="transform: translate3d(0%, 0%, 0%);">
+                <button class="single-pager js-active" id="js-pBtn1"></button>
+                <button class="single-pager" id="js-pBtn2"></button>
+                <button class="single-pager" id="js-pBtn3"></button>
+            </div>  
+            </div>        
+        </div>
+        <div class="vw50 outdoor-wrapper">
+            <div class="description-graphic container outdoor" style="display:block">
+                <div class="js-feature-image image-container">
+                    <img alt="">
+                    <img id="js-pImg1" class="js-active" alt="wix map feature" src="~/Content/index/Images/member.jpg">
+                    <img id="js-pImg2" alt="quality" src="~/Content/index/Images/quality.jpg">
+                    <img id="js-pImg3" alt="quality" src="~/Content/Images/largeImage_girl.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(function () {
+        scroll();
+        getDeal();  
+    });
+
+    /*Scroll to show/hide the cover*/
+    var scroll = function () {
+        var current = $(window).scrollTop();
+        var opacity = 0.35;
+
+        //Used for sliding .js-text-wrapper
+        var Y = 0;
+
+        /*If the user uses the scroll bar*/
+        $(window).on("scroll mousewheel DOMMouseScroll", (function (e) {
+            /*Scrolling down*/
+            if ($(window).scrollTop() > current) {
+                //Reached bottom
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    $('body').addClass('reg');
+                    //opacity = 1;
+                }
+                else {
+                    if ($('body').hasClass('reg')) {
+                        opacity = 1;
+                        Y -= ($(window).scrollTop() - current) * 16 / 100 + 0.5;
+                    }
+                    else {
+                        opacity += 0.008;
+                    }
+                }
+            }
+
+            /*scrolling up*/
+            if ($(window).scrollTop() < current) {
+                if ($('body').hasClass('reg')) {
+                    Y += (current - $(window).scrollTop()) * 16 / 100 + 0.5;
+                }
+                if ($(window).scrollTop() <= 580) {
+                    /*close the side nav */
+                    if (toggleSideNav.open == 1) {
+                        toggleSideNav.toggle();
+                    }
+                    $('body').removeClass('reg');
+                    opacity -= 0.008;
+                }
+                if ($(window).scrollTop() == 0) {
+                    opacity = 0;
+                    //reset position of .js-text-wrapper
+                    Y = 0;
+                }
+            }
+
+            /*If the user uses the mouse wheel, DOMMouseScroll is added for browser compatibility*/
+            //Wheel up
+            if (e.originalEvent.wheelDelta > 0) {
+                if ($(window).scrollTop() <= 580) {
+                    /*close the side nav */
+                    if (toggleSideNav.open == 1) {
+                        $('#js-sb-wrapper').css('opacity', 0);
+                        closeNav();
+                        open = 0;
+                    }
+                    $('body').removeClass('reg');
+                    opacity -= 0.2;
+                }
+                if ($(window).scrollTop() == 0) {
+                    opacity = 0;
+                }
+            }
+                //Wheel down
+            else {
+                /*Reached bottom*/
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    $('body').addClass('reg');
+                    opacity = 1;
+                }
+                else {
+                    opacity += 0.2;
+                }
+            }
+            $('.js-content').css('opacity', opacity);
+            current = $(window).scrollTop();
+            $('.js-text-wrapper').css("transform", "translateY(" + Y + "px)");
+        }));
+    };
+
+    var getDeal = function () {
+        var dailyDealId = "@ViewBag.DailyDealId";
+        if (dailyDealId == "NULL") {
+            $('#js-daily-deal-img').attr('src', '/Content/Images/placeholder.jpg');
+            $('#js-daily-deal-album p').css('display', 'inline-block');
+        }
+        else {
+            $('#js-daily-deal-img').attr('src', "/Album/GetImage/?AlbumId=" + parseInt(dailyDealId));
+            $('#js-daily-deal-album #js-daily-deal').css('display', 'none');
+        }
+    };
+
+    var getDailyDealCallBack = function (data) {
+        if (typeof data.AlbumId != "undefined") { //the user is not registered
+            $('img.image-cover').attr('src', '/Album/GetImage/?AlbumId=' + data.AlbumId);
+            $('#js-daily-deal').append('<p class="text">' + data.Name + ' - ' + data.Artist.Name + '</p>');
+        }
+        else {
+            $('#js-daily-deal').empty();
+            $('#js-daily-deal').append('<p class=text>' + data + '</p>');
+        };
+    };
+
+    /*Switch between top selling albums and daily special album*/
+    //$('.js-back').on('click', function(){...}) only works on the first click
+    //Because the class 'js-back' and 'js-front' will be added after the document finishes loading
+    //so to continually swap two elements, I cannot use the above method. 
+    //Jquery does not detect changes after the first click.
+    //I have to find the new added class in the document then apply the function like this:    
+    $(document).on('click', '.js-back', function () {
+        $('.js-back').addClass('js-active');
+        $('.js-front')
+            .addClass('js-back')
+            .removeClass('js-active');
+        $('#js-cd-cover')
+            .css('transform', 'translate3d(-70%, -10%, 0')
+            .css('opacity', 0);
+
+        setTimeout(function () {
+            $('#js-cd-cover')
+                .css('transform', 'translate3d(-12%, 0%, 0')
+                .css('opacity', 1);
+        }, 500);
+
+        $('.js-active').removeClass('js-back');
+        $('.js-active').addClass('js-front');
+        $('.js-back').removeClass('js-front');
+        if ($('#js-daily-deal-img').hasClass('js-active js-front')) {
+            $('#top-albums-text').removeClass('js-active');
+            $('#js-daily-deal-album').addClass('js-active');
+        }
+        else {
+            $('#top-albums-text').addClass('js-active');
+            $('#js-daily-deal-album').removeClass('js-active');
+        }
+    });
+
+    $('#getDailyDeal').on('click', function () {
+        $.ajax({
+            url: "/Home/DailyDeal",
+            cache: false,
+            method: "get",
+            success: "getDailyDealCallBack"
+        });
+    });
+
+    /*Switch features*/
+    $(document).on('click', '.pager button', function () {
+        /*current active button*/
+        var currentButton = $('.pager .js-active');
+
+        /*current active image*/
+        var currentImg = $(".js-feature-image .js-active");
+
+        /*current active text*/
+        var currentFeature = $(".feature.js-active");
+
+        /*get the index of the clicked button*/
+        var i = $(this).attr('id').charAt($(this).attr('id').length - 1);
+        //console.log(i);
+
+        if (currentButton.attr('id') != $(this).attr('id')) {
+            $('.js-feature-image').css('transform', 'translateX(999%)');
+
+            $('#js-pFt' + i).addClass('js-active');
+            $('#js-pBtn' + i).addClass('js-active');
+            $('#js-pImg' + i).addClass('js-active');
+
+            currentFeature.removeClass('js-active');
+            currentButton.removeClass('js-active');
+            currentImg.removeClass('js-active');
+
+            setTimeout(function () {                                /**/
+                $('.js-feature-image').css('transform', 'translateX(0%)');
+            }, duration);
+        }
+    });
+</script>
+
+<link href="~/Content/index/index.css" rel="stylesheet" />

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<GreenSol.Domain.Entities.Album>
+
+@{
+    ViewBag.Name = "Admin: All Albums";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel panel-default" style="padding:20px;">
+    <div style="padding-left: 15px;">
+        <h3>All Products</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th class="text-right">ID</th>
+                <th>Name</th>
+                <th>Artist</th>
+                <th>Genre</th>
+                <th>Date release</th>
+                <th class="text-right">Price</th>
+                <th class="text-center">Actions</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-right">@item.AlbumId</td>
+                    <td>@Html.ActionLink(item.Name, "Edit", new { item.AlbumId })</td>
+                    <td class="text-left">@item.Artist.Name</td>
+                    <td class="text-left">@item.Genre.Name</td>
+                    <td class="text-left">@item.Date.ToShortDateString()</td>
+                    <td class="text-right">@item.Price.ToString("c")</td>
+                    <td class="text-center">
+                        @using (Html.BeginForm("Delete", "Admin"))
+                        {
+                            @Html.Hidden("AlbumId", item.AlbumId)
+                            <input type="submit"
+                                   class="myButton2 red2"
+                                   style="margin:0"
+                                   value="Delete" />
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="footer" style="padding-left: 15px;">
+        @Html.ActionLink("Add a new album", "Create", null, new { @class = "myButton2 green2" })
+    </div>
+</div>

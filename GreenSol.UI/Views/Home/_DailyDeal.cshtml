@@ -1,0 +1,29 @@
+﻿@model GreenSol.Domain.Entities.Album
+
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Your daily deal: @Model.Name</h3>
+    </div>
+    <div class="panel-body">
+        <p>
+            <img alt="@Model.Name" src="@Url.Action("GetImage", "Album", new {Model.AlbumId})" class="img-thumbnail" width="150" height="150"/>
+        </p>
+
+        <div id="album-details">
+            <p>
+                <em>Artist:</em>
+                @Model.Artist.Name
+            </p>
+            <p>
+
+                <em>Price:</em>
+                @String.Format("{0:F}", Model.Price)
+            </p>
+            @Html.ActionLink("Add to cart", "AddToCart",
+                    "ShoppingCart",
+                             new { albumId = Model.AlbumId, returnUrl = @Request.Url.PathAndQuery },
+                    new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>

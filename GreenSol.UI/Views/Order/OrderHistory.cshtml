@@ -1,0 +1,85 @@
+﻿@using GreenSol.Domain.Entities
+@model IEnumerable<GreenSol.UI.Models.OrderHistoryModel>
+@{
+    ViewBag.Title = "Order History";
+}
+
+<h2 style="margin-bottom:50px">Order history</h2>
+
+
+<div class="form-group">
+    <table class="table table-condensed table-responsive">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Order date</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th style="width: 10vw;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="main-row">
+                    <td>
+                        @Html.ActionLink(@item.OrderDetailsId.ToString(), "OrderDetail", new { id = item.OrderDetailsId })
+                    </td>
+                    <td>@item.OrderDate</td>
+                    <td>@item.Total $</td>
+                    <td id="@item.OrderDetailsId-status">@item.Status</td>
+                        @if (item.Status.ToString() == "Processing")
+                        {
+                            <td id="@item.OrderDetailsId-cancel">
+                                <div>
+                                    @Ajax.ActionLink("Cancel", "CancelOrder", new { id = item.OrderDetailsId }, new AjaxOptions
+                                       {
+                                           HttpMethod = "Post",
+                                           InsertionMode = InsertionMode.Replace,
+                                           OnSuccess = "CancelOrder"
+                                       },
+                                       new { @id = item.OrderDetailsId, @class = "myButton2 orange2 cancel-button", @style = "padding:5px 10px; display:inline" })
+                                </div>
+                            </td>
+                        }
+                </tr>
+                @*@foreach (var subItem in item.Orders)
+                    {
+                        <div class="order-detail">
+                            @Ajax.ActionLink("Show details", "OrderDetail", null, new AjaxOptions
+                                {
+                                    HttpMethod = "Get",
+                                    UpdateTargetId = "order-detail",
+                                    InsertionMode = InsertionMode.Replace,
+                                    OnSuccess = "GetOrderDetail"
+
+                                },
+                                new { @class="myButton2 blue2", @style="width:150px"}
+                            )
+                        </div>
+                    }*@
+            }
+        </tbody>
+    </table>  
+</div>
+
+@*<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>*@
+<script type="text/javascript">
+    function CancelOrder(data) {
+        //Find the chosen order
+        var id = $(this).attr("id");
+        
+        $("#" + id + "-status").text(data);
+
+        //remove the cancel button
+        $("td").remove("#" + id + "-cancel");
+    }
+</script>
+
+<style type="text/css">
+    td{
+        border: none !important;
+        padding: 10px !important;
+    }
+</style>

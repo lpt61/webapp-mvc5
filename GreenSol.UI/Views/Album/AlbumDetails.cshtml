@@ -1,0 +1,43 @@
+﻿@model GreenSol.Domain.Entities.Album
+
+@{
+    ViewBag.Title = "Album - " + Model.Name;
+}
+
+<h2>@Model.Name</h2>
+
+<div id="album-details" style="display: inline-block; margin: 0 10px; vertical-align: top">
+    <p style="display:none">@Model.TrackList</p>
+    <p>
+        <em>Genre:</em>
+        @Model.Genre.Name
+    </p>
+    <p>
+        <em>Artist:</em>
+        @Model.Artist.Name
+    </p>
+    <p>
+        <em>Date release:</em>
+        @Model.Date.ToShortDateString()
+    </p>
+    <p>
+        <em>Price:</em>
+        @Html.DisplayFor(model => model.Price)
+    </p>
+
+    @Html.Partial("AddToCartAjax", Model)
+
+</div>
+<hr/>
+
+@Html.Partial("_MusicPlayer")
+
+<style type="text/css">
+    #addToCartBtn {
+        float: left;
+    }
+
+    #addToCartBtn input {
+        margin-left: 0;
+    }
+</style>

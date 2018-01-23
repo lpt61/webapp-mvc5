@@ -1,0 +1,81 @@
+﻿@model GreenSol.Domain.Entities.Album
+
+<style type="text/css">
+    #addToCartBtn{
+        float:right;       
+    }
+
+    #addToCartBtn input{
+        margin-right: 0px;
+    }
+
+    .album-summary{
+        min-height:20px; 
+        padding:19px; 
+        margin-bottom:20px; 
+        border:1px solid #a09b9b;
+        box-shadow: 0 0px 4px rgba(0, 0, 0, 0.6);
+    }
+    .album-summary:hover{
+        box-shadow: 
+            0 12px 12px rgba(0, 0, 0, 0.6)
+    }
+
+    .img-thumbnail{
+        box-shadow: 0 5px 11px rgb(98, 107, 101);
+    }
+
+    .pull-left{
+        margin-right: 10px
+    }
+    b{
+        font-weight:400
+    }
+    span.pull-right{
+        font-size:24px
+    }
+    input[type="submit"]{
+        width:80px;
+    }
+</style>
+
+<div class="album-summary">
+    @if (Model.ImageData != null)
+    {
+        <div class="pull-left">
+            <img class="img-thumbnail"
+                 src="@Url.Action("GetImage", "Album", new { Model.AlbumId })" />
+        </div>
+    }
+
+    <h2>
+        <a href="@Url.Action("AlbumDetails", "Album", new {@Model.AlbumId})">
+            <b>@Model.Name</b>
+        </a>
+        <span class="pull-right">@Model.Price.ToString("c")</span>
+    </h2>
+
+    @*@using (Html.BeginForm("AddToCart", "ShoppingCart"))
+    {
+        <div class="pull-right">
+            @Html.HiddenFor(x => x.AlbumId)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            <input type="submit" class="myButton2 green2" value="Add to cart"/>
+        </div>
+    }*@
+
+    @Html.Partial("AddToCartAjax", Model)
+
+    <div>
+        <span class="lead"><b>@Model.Artist.Name</b></span>
+    </div>
+    <div>
+        <span class="lead"><b>@Model.Genre.Name</b></span>
+    </div>
+</div>
+
+@*<script type="text/javascript">
+    function AddToCart(data) {
+        $('#cart-summary').append(data.TotalItem + 'item(s),$' + data.TotalPrice)
+    }
+</script>*@

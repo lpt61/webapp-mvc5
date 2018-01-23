@@ -1,0 +1,65 @@
+﻿@model GreenSol.UI.Models.AlbumSearchViewModel
+@{
+    ViewBag.Title = "Advance Search";
+}
+
+<style type="text/css">
+    body{
+            background-size: cover;
+    }
+</style>
+
+<div>
+    @using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "form-horizontal"}))
+    {
+        @Html.EditorFor(m => m.SearchCriteria)
+
+        <div class="form-group criteria-group">
+            <div class="col-sm-2 " style="left:7%; margin-left: 0.5%;">
+                <button type="submit" class="myButton2 blue2" style="width:100%">Apply filters</button>
+            </div>
+        </div>
+    }
+    <hr />
+</div>
+
+<div margin-top: 50px;">
+    @if (Model.Data.Count() == 0) { 
+        <p><b style="color:red; font-weight:400">Sorry, no result was found.</b></p>
+    }
+    else
+    {
+        <table class="table table-condensed table-responsive">
+            <thead><tr><th>Record</th><th>Name</th><th>Genre</th><th>Artist</th><th>Date release</th><th>Price</th></tr></thead>
+            <tbody>
+                @foreach (var item in this.Model.Data)
+                {
+                    <tr>
+                        <td>@(Model.Data.ToList().IndexOf(item) + 1)</td>
+                        <td>
+                            @Html.ActionLink(item.Name, "AlbumDetails", "Album", new { item.AlbumId }, null)
+                        </td>
+                        <td>@item.Genre.Name</td>
+                        <td>@item.Artist.Name</td>
+                        <td>@item.Date.ToShortDateString()</td>
+                        <td>@item.Price</td>
+                        <td>@Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { @item.AlbumId }, new { @class="myButton2 green2"})</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+<style type="text/css">
+    table thead tr th,
+    table tbody tr td{
+        border:none !important;
+    }
+    label{
+        text-align:left !important
+    }
+</style>
+
+@*<script src="~/Scripts/jquery-3.1.1.min.js"></script>*@
+<script src="~/Scripts/Custom/enableDateSearch.js"></script>

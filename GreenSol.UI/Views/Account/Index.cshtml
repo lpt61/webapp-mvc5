@@ -1,0 +1,45 @@
+﻿@using GreenSol.UI.Models
+@model IEnumerable<AppUser>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style type="text/css">
+    .myButton2{
+        margin: 0px;
+    }
+</style>
+
+<div>
+    <h3> User accounts</h3>
+    <table class="table">
+        <tr><th>ID</th><th>Name</th><th>Email</th><th></th></tr>
+        @if (Model.Count() == 0)
+        {
+            <tr><td colspan="4" class="text-center">No User Accounts</td></tr>
+        }
+        else
+        {
+            foreach (AppUser user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>
+                        @using (Html.BeginForm("Delete", "Account", new { id = user.Id }))
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = user.Id }, new { @class = "myButton2 blue2"})
+                            <button class="myButton2 red2"
+                                    type="submit" style="width:60px">
+                                Delete
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+@Html.ActionLink("Create", "Create", null, new { @class = "myButton2 green2"})

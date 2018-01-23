@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title</title>
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+        <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+        <link href="~/Content/Layout.css" rel="stylesheet"/>
+        <style>
+            .navbar-right {
+                float: right !important;
+                margin-right: 15px;
+                margin-left: 15px;
+            }
+        </style>
+
+        @*==================================================================*@
+        <link href="~/Content/navbar-style.css" @*media="screen"*@ rel="stylesheet" type="text/css" />
+        <link href="~/Content/iconic.css" media="screen" rel="stylesheet" type="text/css" />
+        <script src="~/Scripts/Custom/prefix-free.js"></script>
+        <!--Render these script before RenderBody() to avoid re-rendering them in views that use this Layout-->
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryunobtrusive")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+
+    </head>
+    <body>
+        <div class="navbar">
+            <nav>
+                <div class="navbar-header">
+                    <a class="brand" href="/">
+                        <span class="hidden-xs">GREEN SOL</span>
+                        <div class="visible-xs" style="font-size:32px">&#119070;</div>
+                    </a>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <a href="#">
+                            FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Services
+                        </a>
+                        <ul>
+                            <li><a href="#">Service 1</a></li>
+                            <li><a href="#">Service 2</a></li>
+                            <li><a href="#">Service 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                        Contact</a>  
+                    </li>   
+                    <li>
+                        <a href="#">
+                            About
+                        </a>
+                    </li>             
+                </ul>              
+                <ul class="usermenu">
+                    <li>
+                        @Html.Partial("_LoginPartial")
+                    </li>
+                    <li>
+                        @Html.Action("Summary", "ShoppingCart")
+                    </li>                   
+                </ul>
+                <div class="clearfix"></div>
+            </nav>
+        </div>
+
+        <main class="sidebar sidebar-close">
+            <div id="sb-wrapper" class="sb-wrapper scrollbar-style-1">
+                <div style="margin-top:80px; margin-bottom:110px;">
+                    <div>
+                        <h2>Search</h2>
+                        <ul class="subscribe">
+                            <li>
+                                <input id="searchBox" type="text" style="box-shadow:none" placeholder="type and press Enter">
+                                <a id="config" class="glyphicon glyphicon-cog"></a>
+                                <ul id="searchOption">
+                                    <li>
+                                        <input id="chkBoxTitle" type="radio" name="criteria" value="Titles" checked />
+                                        <label for="chkBoxTitle">Titles</label>
+                                    </li>
+                                    <li>
+                                        <input id="chkBoxGenre" type="radio" name="criteria" value="Genres" />
+                                        <label for="chkBoxGenre">Genres</label>
+                                    </li>
+                                    <li>
+                                        <input id="chkBoxArtist" type="radio" name="criteria" value="Artists" />
+                                        <label for="chkBoxArtist">Artists</label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Browse</h2>
+                        @Html.Action("Menu", "Nav")
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="mainBody" class="body-container col-xs-10 col-sm-8">
+                <div>
+                    <button id="toggleSidenav" class="my button green">
+                        <img id="imgToggle" src="~/Content/Images/button-category.svg" />
+                    </button>
+                    @RenderBody()
+                </div>
+            </div> 
+        </main>    
+        <footer>
+            <hr />
+            <p align="center" style="margin-top:35px">&copy; GreenSol, 7 - 11.2017</p>
+        </footer>  
+    </body>
+</html>
+
+<script src="~/Scripts/Custom/layout.js"></script>
+<script type="text/javascript">
+    //Search box
+    var criteria = "Titles";
+
+    $('#searchOption input').on('change', function () {
+        criteria = $('input[name=criteria]:checked').val();
+    });
+
+    $('#searchBox').on('keypress', function (e) {
+        if (e.which == 13) {
+            location.href = '@Url.Action("DefaultSearch", "Search")'
+                + '?criteria=' + criteria
+                + '&searchString=' + $(this).val();
+        }
+    });
+
+    $('#config').on('click', function () {
+        location.href = '@Url.Action("Index", "Search")';
+    });
+</script>

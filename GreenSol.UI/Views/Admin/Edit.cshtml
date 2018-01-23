@@ -1,0 +1,89 @@
+﻿@model GreenSol.Domain.Entities.Album
+
+@{
+    ViewBag.Name = "Admin: Edit " + @Model.Name;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="padding:20px;">
+    <div style="padding-left: 15px;">
+        <h3>Edit @Model.Name</h3>
+    </div>
+
+    @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class="panel-body" }))
+    {
+        @Html.ValidationSummary(true)
+        <div>
+            @Html.HiddenFor(m => m.AlbumId)
+
+            <div class="form-group col-sm-3">
+                <div class="form-group">
+                    <label>Name</label>
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                <div class="form-group">
+                    <label>Genre</label>
+                    @Html.TextBoxFor(model => model.Genre.Name, new { @class = "form-control", @data_autocomplete_source = ViewBag.GenresList })
+                    @Html.ValidationMessageFor(model => model.Genre.Name)
+                </div>
+            </div>
+            <div class="form-group col-sm-3">
+                <div class="form-group">
+                    <label>Artist</label>
+                    @Html.TextBoxFor(model => model.Artist.Name, new { @class = "form-control", @data_autocomplete_source = ViewBag.ArtistsList })
+                    @Html.ValidationMessageFor(model => model.Artist.Name)
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    @*Add the format string to display the current value in the input box*@
+                    @Html.TextBoxFor(model => model.Date, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                    @Html.ValidationMessageFor(model => model.Date)
+                </div>
+            </div>
+            <div class="form-group col-sm-3">
+                <div class="form-group">
+                    <label>Tracks</label>
+                    @Html.TextBoxFor(model => model.TrackList, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TrackList)
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    @Html.TextBoxFor(model => model.Price, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Price)
+                </div>
+            </div>
+            <div class="form-group col-sm-3">
+                <div class="form-group">
+                    <div style="position:relative;">
+                        <label>Album art</label>
+                        <a class='btn' href='javascript:;'>
+                            Choose File...
+                            <input type="file" name="Image" size="40"
+                                    style="position:absolute;z-index:2;top:0; left:0; filter: alpha(opacity=0); opacity:0;
+                                        background-color:transparent;color:transparent;"
+                                    onchange='$("#upload-file-info").html($(this).val());'>
+                        </a>
+                        <span class='label label-info' id="upload-file-info"></span>
+                    </div>
+                    @if (Model.ImageData == null) {
+                        <div class="form-control-static">No Image</div>
+                } else {
+                        <img class="img-thumbnail" width="150" height="150"
+                                src="@Url.Action("GetImage", "Album", new { Model.AlbumId })" />
+                }
+                </div>
+            </div>
+        </div>
+    <div class="form-group col-sm-12" style=" padding-left: 15px;">
+        <input type="submit" value="Save" class="myButton2 green2" style="width:60px;" />
+        @Html.ActionLink("Cancel and return to List", "Index", null, new { @class = "myButton2 blue2" })
+    </div>
+    }
+</div>
+
+<!--Autocomplete for Genre and Artist-->
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+<script src="~/Scripts/Custom/autocomplete.js"></script>
+<link href="~/Content/Autocomplete.css" rel="stylesheet"/>
+@*<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />*@

@@ -1,0 +1,41 @@
+﻿@model GreenSol.UI.Models.CreateModel
+
+<div class="row">
+    <div class="col-md-8">
+        <section id="register">
+            @*@Html.ValidationSummary(false)*@
+            @using (Html.BeginForm("Create", "Account", null, FormMethod.Post, new { role = "form" }))
+            {
+                @Html.ValidationSummary(true)
+                <label>@Html.ValidationMessageFor(m => m.Email)</label>
+                <div class="form-group">
+                    <label>Name</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                </div>
+
+                <div id="register-btngroup">
+                    <input type="submit" class="myButton2 green2" value="Create" />
+                </div>
+            }
+        </section>
+    </div>
+</div>
+
+<style type="text/css">
+    .validation-summary-errors{
+        margin-left: 18px;
+    }
+    .validation-summary-errors li {
+        font-weight: normal;
+        font-size: 18px;
+    }
+</style>

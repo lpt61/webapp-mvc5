@@ -1,0 +1,25 @@
+﻿@model GreenSol.Domain.Entities.Album
+
+@using (Ajax.BeginForm("AddToCartJSON", "ShoppingCart", null, new AjaxOptions
+{
+    HttpMethod = "Post",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "cart-summary",
+    OnSuccess = "AddToCart"
+}))
+{
+    <div id="addToCartBtn">
+        @Html.HiddenFor(x => x.AlbumId)
+        <input type="submit" class="myButton2 green2" value="Add to cart" />
+    </div>
+}
+
+<script type="text/javascript">
+    function AddToCart(data) {
+        $('#cart-summary').append(data.TotalItem + ' item(s), ' + data.TotalPrice + ' $');
+        $('#cart-icon').addClass('animated bounceIn');
+        setTimeout(function () {
+            $('#cart-icon').removeClass('animated bounceIn');
+        }, 800);
+    }
+</script>

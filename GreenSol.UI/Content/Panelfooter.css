@@ -1,0 +1,7 @@
+﻿/*Align panel-footer class to the bottom for the view Admin/Edit*/
+.panel-footer footer{
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;
+}

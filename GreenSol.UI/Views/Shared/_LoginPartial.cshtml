@@ -1,0 +1,45 @@
+﻿@*Using navbar-style.css*@
+
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+    
+        <a class="username" href="#">Hi, @User.Identity.GetUserName()</a>
+        <ul>
+            @*<li><img id="userAvatar" src='@Url.Content("~/Content/Images/usericon.png")' class="img-responsive" width="40" height="40" style="padding-top: 5px" /></li>*@
+        
+            @if (@User.IsInRole("Administrators"))
+            {
+                <li>@Html.ActionLink("Albums", "Index", "Admin", routeValues: null, htmlAttributes: new { title = "Manage albums" })</li>
+                <li>@Html.ActionLink("Accounts", "Index","Account", routeValues: null, htmlAttributes: new { title = "Manage accounts" })</li>
+                <li>@Html.ActionLink("Orders", "OrderList", "Admin", routeValues: null, htmlAttributes: new { title = "Manage orders" })</li>
+                <li>@Html.ActionLink("Roles", "Index", "RoleAdmin", routeValues: null, htmlAttributes: new { title = "Manage roles" })</li>
+            }
+            else
+            {
+                <li>@Html.ActionLink("Checkout", "Index", "ShoppingCart", new { returnUrl = Request.Url.PathAndQuery }, null)</li>
+                <li>@Html.ActionLink("My orders", "OrderHistory", "Order", routeValues: new { id = @User.Identity.GetUserId() }, htmlAttributes: new { title = "Orders" })</li>
+                <li>@Html.ActionLink("My account", "Edit", "Account", routeValues: new { id = @User.Identity.GetUserId() }, htmlAttributes: new { title = "Manage" })</li>
+            }      
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
+    }
+}
+else
+{
+    <a class="username">Hi, Guest</a>
+    <ul>
+        <li>@Html.ActionLink("Checkout", "Index", "ShoppingCart", new { returnUrl = Request.Url.PathAndQuery }, null)</li>
+        <li>@Html.ActionLink("Register", "Create", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+    @*<a class="username">Hi, Guest</a>
+    <ul>
+        <li><a id="registerLink" style="cursor:pointer">Register</a></li>
+        <li><a id = "loginLink" style="cursor:pointer">Login</a></li>
+    </ul>*@
+}
+

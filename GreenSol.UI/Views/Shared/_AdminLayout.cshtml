@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+    <link href="~/Content/AdminLayout.css" rel="stylesheet" />
+    <style>
+        .navbar-right {
+            float: right !important;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+    </style>
+
+    <link href="~/Content/navbar-style.css" @*media="screen"*@ rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/Custom/prefix-free.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryunobtrusive")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div class="navbar">
+        <nav>
+            <div class="navbar-header">
+                <a class="brand" href="/">
+                    <span class="hidden-xs">GREEN SOL</span>
+                    <div class="visible-xs" style="font-size:32px">&#119070;</div>
+                </a>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="#">
+                        FAQ
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        Services
+                    </a>
+                    <ul>
+                        <li><a href="#">Service 1</a></li>
+                        <li><a href="#">Service 2</a></li>
+                        <li><a href="#">Service 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        Contact
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        About
+                    </a>
+                </li>
+            </ul>
+            <ul class="usermenu">
+                <li>
+                    @Html.Partial("_LoginPartial")
+                </li>
+                @*<li>
+                    @Html.Action("Summary", "ShoppingCart")
+                </li>*@
+            </ul>
+            <div class="clearfix"></div>
+        </nav>
+    </div>
+    <div>
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
+        @RenderBody()
+    </div>
+</body>
+</html>

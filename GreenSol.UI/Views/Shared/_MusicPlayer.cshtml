@@ -1,0 +1,60 @@
+﻿<div class="player paused">
+    <div class="column center">
+    </div>
+    <div class="column add-bottom">
+        <div id="mainwrap">
+            <div id="audiowrap">
+
+                <div class="album">
+                    <div class="cover">
+                        <div>
+                            <img src="@Url.Action("GetImage", "Album", new { Model.AlbumId })" width=" 300" height="300" alt="Image" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info title">                
+                    <h3 id="npTitle"></h3>
+                    <h4 id="trackNumber"></h4>
+                </div>
+
+                <div class="actions">                 
+                    <button class="mediabutton rw">
+                        <div class="arrow"></div>
+                        <div class="arrow"></div>
+                    </button>
+                    <button class="mediabutton play-pause">
+                        <div class="arrow"></div>
+                    </button>
+                    <button class="mediabutton ff">
+                        <div class="arrow"></div>
+                        <div class="arrow"></div>
+                    </button>
+                </div>
+                <div class="info">
+                    <div class="time">
+                        <span id="current-time">0:00</span>
+                        <span id="progress"><span></span></span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+                <audio id="audio" preload="auto">
+                    Your browser does not support the audio tag.
+                </audio>
+                </div>                
+            <div class="musicList-scrollbar scrollbar-style-1">
+                <div class="force-overflow">
+                    <div id="plwrap">
+                        <ul id="plList"></ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+<script src="~/Scripts/Custom/musicplayer.js"></script>
+<link href="~/Content/musicplayer/music_player.css" rel="stylesheet"/>

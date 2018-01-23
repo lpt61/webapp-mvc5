@@ -1,0 +1,64 @@
+﻿@using Microsoft.AspNet.Identity
+
+@model GreenSol.Domain.Entities.OrderDetail
+
+@{
+ ViewBag.Title = "GreenSol: Checkout";
+}
+
+<div class="checkout">
+    <h2>Check out now</h2>
+    <p style="margin:0 0 50px">Please enter your details, and we'll ship your goods right away!</p>
+
+    @using (Html.BeginForm(new {cusId= User.Identity.GetUserId()}))
+    {
+
+        @Html.ValidationSummary()
+        @Html.HiddenFor(m => m.OrderDetailId)
+
+        <div class="form-group">
+            <label>Name:</label>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        </div>
+
+        foreach (var property in ViewData.ModelMetadata.Properties)
+        {
+            if (property.PropertyName != "Name"
+                && property.PropertyName != "GiftWrap"
+                && property.PropertyName != "OrderDetailId"
+                && property.PropertyName != "OrderDate"
+                && property.PropertyName != "Order"
+                && property.PropertyName != "Total"
+                && property.PropertyName != "CustomerId"
+                && property.PropertyName != "Status"
+                )
+            {
+                <div class="form-group">
+                    <label>@(property.DisplayName ?? property.PropertyName)</label>
+                    @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                </div>
+            }
+        }
+
+        <h3>Options</h3>
+        <div class="checkbox">
+            <label>
+                @Html.EditorFor(x => x.GiftWrap)
+                Gift wrap these items
+            </label>
+        </div>
+
+        <div class="text-center">
+            <input class="myButton2 blue2" type="submit" value="Complete order" style="width:150px"/>
+        </div>
+    }
+</div>
+
+<style type="text/css">
+    .checkout {
+        padding:0 25% 0 25%
+    }
+    h2,p,form{
+        padding: 0 18% 0 18%;
+    }
+</style>

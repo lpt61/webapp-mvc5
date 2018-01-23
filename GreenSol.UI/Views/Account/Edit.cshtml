@@ -1,0 +1,24 @@
+﻿@model GreenSol.UI.Models.AppUser
+@{ 
+    ViewBag.Title = "Edit"; 
+}
+
+@Html.ValidationSummary(false)
+<h2 style="margin-bottom:50px">Edit User</h2>
+
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(x => x.Id)
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input name="password" type="password" class="form-control" />
+    </div>
+    <button type="submit" class="myButton2 green2" style="width:70px;margin-left:0;">
+        Save
+    </button>
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "myButton2 red2" })
+}

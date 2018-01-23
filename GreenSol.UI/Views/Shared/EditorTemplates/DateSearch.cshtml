@@ -1,0 +1,25 @@
+﻿@model GreenSol.Domain.Concrete.DateSearch
+
+<div class="form-group">
+    @Html.LabelFor(m => m.SearchTerm, this.Model.LabelText, new { @class = "col-sm-1 control-label" })
+    <div class="col-sm-2">
+        @Html.EnumDropDownListFor(m => m.Comparator, new { @id = "dateSelect", @class = "form-control" })
+    </div>
+    <div class="col-sm-8 form-inline">
+        @Html.TextBoxFor(m => m.SearchTerm, new { @id = "searchTerm1", @class = "form-control", type = "date" })
+        @if (this.Model.Comparator == GreenSol.Domain.Concrete.DateComparators.InRange)
+        {
+            @Html.TextBoxFor(m => m.SearchTerm2, new { @class = "form-control", type = "date" })
+        }
+        else
+        {
+            @Html.TextBoxFor(m => m.SearchTerm2, new { @id = "searchTerm2", @class = "form-control", type = "date", style = "display: none;" })
+        }
+    </div>
+    @Html.HiddenFor(m => m.Property)
+    @Html.HiddenFor(m => m.TargetTypeName)
+    @Html.Hidden("ModelTypeName", this.Model.GetType().AssemblyQualifiedName)
+</div>
+
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script src="~/Scripts/Custom/enableDateSearch.js"></script>

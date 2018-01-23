@@ -1,0 +1,181 @@
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll.config
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\GreenSol.Domain.pdb
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\EntityFramework.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Helpers.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Mvc.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Razor.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\EntityFramework.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Helpers.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Mvc.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Razor.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\obj\Debug\GreenSol.Domain.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\obj\Debug\GreenSol.Domain.pdb
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\obj\Debug\GreenSol.Domain.csprojResolveAssemblyReference.cache
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll.config
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\GreenSol.Domain.pdb
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\EntityFramework.dll
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Helpers.dll
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Mvc.dll
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Razor.dll
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\EntityFramework.xml
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Helpers.xml
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Mvc.xml
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.Razor.xml
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\obj\Debug\GreenSol.Domain.csprojResolveAssemblyReference.cache
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\obj\Debug\GreenSol.Domain.dll
+C:\Users\PTL\Documents\Visual Studio 2013\Projects\GreenSol\GreenSol.Domain\obj\Debug\GreenSol.Domain.pdb
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll.config
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.pdb
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Helpers.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Mvc.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Razor.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Helpers.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Mvc.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Razor.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.csprojResolveAssemblyReference.cache
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.dll
+C:\Users\lptic\Documents\Visual Studio 2013\Projects\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.pdb
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll.config
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.pdb
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.dll
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Helpers.dll
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Mvc.dll
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Razor.dll
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.dll
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.xml
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Helpers.xml
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Mvc.xml
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Razor.xml
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.xml
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+E:\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.csprojResolveAssemblyReference.cache
+E:\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.dll
+E:\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.pdb
+E:\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.csproj.GenerateResource.Cache
+E:\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.EFDbContextMigrations.CustomerIdProperty.resources
+E:\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.EFDbContextMigrations.StatusProperty.resources
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.csproj.GenerateResource.Cache
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll.config
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.pdb
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Newtonsoft.Json.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Owin.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Helpers.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Mvc.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Razor.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Newtonsoft.Json.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Helpers.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Mvc.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Razor.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.dll
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.pdb
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.EFDbContextMigrations.201711051234443_CustomerIdProperty.resources
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.EFDbContextMigrations.201711171337496_EmailProperty.resources
+E:\GREENSOL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.csprojResolveAssemblyReference.cache
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll.config
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\GreenSol.Domain.pdb
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Newtonsoft.Json.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Owin.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Helpers.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Mvc.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Razor.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\Newtonsoft.Json.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Helpers.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Mvc.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.Razor.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.csprojResolveAssemblyReference.cache
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.EFDbContextMigrations.201711051234443_CustomerIdProperty.resources
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.EFDbContextMigrations.201711171337496_EmailProperty.resources
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.csproj.GenerateResource.Cache
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.dll
+E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.pdb

@@ -1,0 +1,100 @@
+﻿@*@model IEnumerable<string>
+
+@{
+    bool horizontal = ((bool)(ViewContext.RouteData.Values["horizontalLayout"] ?? false));
+    string wrapperClasses = horizontal ? "btn-group btn-group-sm btn-group-justified" : null;
+}
+
+<div class="@wrapperClasses">
+    @Html.ActionLink("Genre", "List", "Album", null, new { @class = horizontal ? "btn btn-default btn-sm" : "btn btn-block btn-default btn-lg" })
+
+    @foreach (var link in Model)
+    {
+        @Html.RouteLink(link, 
+        new
+        {
+            controller = "Album",
+            action = "List",
+            genre = link,
+            page = 1
+        }, 
+        new
+        {
+            @class = (horizontal ? "btn btn-default btn-sm" 
+                : "btn btn-block btn-default btn-lg" ) 
+                + (link == ViewBag.SelectedGenre ? " btn-primary" : "")
+        })
+    }
+</div>*@
+
+@*@model IEnumerable<string>
+
+@{
+    var selectedGenre = @ViewBag.SelectedGenre;
+}
+
+<div class="ac-container" style=" max-width:inherit">
+    <div>
+        <input id="ac-1" name="accordion-1" type="checkbox" checked />
+        <label for="ac-1">Genres</label>
+        <ul class="menu1">
+            @foreach (var link in Model)
+            {
+                <li class=@(link == selectedGenre ? "selected" : "" )>
+                    <a href="@Url.Action("List","Album", new {page = 1, genre = link})">
+                        @link
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div>
+        <input id="ac-2" name="accordion-2" type="checkbox"/>
+        <label for="ac-2">Nav Menu 2</label>
+        <ul class="menu2">            
+            <li>
+                <a href="#">Sub menu 1</a>
+            </li>
+            <li>
+                <a href="#">Sub menu 2</a>
+            </li>
+        </ul>
+    </div>
+</div>*@
+
+@model IEnumerable<string>
+
+@{
+    var selectedGenre = @ViewBag.SelectedGenre;
+}
+
+<div class="leftNav" style=" max-width:inherit">
+    <div>
+        <input id="ac-1" name="accordion-1" type="checkbox" checked />
+        <label for="ac-1">&nbsp;</label>
+        <a href='@Url.Action("List", "Album")'>All Genres</a>
+        <ul class="leftNav menu1">
+            @foreach (var link in Model)
+            {
+                <li class=@(link == selectedGenre ? "selected" : "" )>
+                    <a href="@Url.Action("List","Album", new {page = 1, genre = link})">
+                        @link
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div>
+        <input id="ac-2" name="accordion-2" type="checkbox"/>
+        <label for="ac-2">&nbsp;</label>
+        <a href=#>Menu 2</a>
+        <ul class="menu2">
+            <li>
+                <a href="#">Sub menu 1</a>
+            </li>
+            <li>
+                <a href="#">Sub menu 2</a>
+            </li>
+        </ul>
+    </div>
+</div>

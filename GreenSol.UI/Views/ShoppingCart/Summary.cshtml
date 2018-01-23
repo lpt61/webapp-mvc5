@@ -1,0 +1,26 @@
+﻿@model GreenSol.Domain.Entities.ShoppingCart
+
+@{
+    var checkout = @Model.TotalItems() + " item(s), " + @Model.TotalPrice().ToString("c");
+}
+
+<div class="cart-summary hidden-xs">
+    @*@Html.ActionLink(checkout, "Index", "ShoppingCart", new { returnUrl = Request.Url.PathAndQuery }, null)*@
+    <span id="cart-icon" class="glyphicon glyphicon-shopping-cart"></span>
+    <label id="cart-summary" style="font-weight:400">@Model.TotalItems() item(s), @Model.TotalPrice().ToString() $</label>
+</div>
+
+@*
+<div class="visible-xs">
+    <a href=@Url.Action("Index", "ShoppingCart", new { returnUrl = Request.Url.PathAndQuery })
+       class="btn btn-default navbar-btn">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+    </a>
+</div>
+
+<div class="navbar-text">
+    <b class="hidden-xs">Your cart:</b>
+    @Model.TotalItems() item(s), 
+    @Model.TotalPrice().ToString("c")
+</div>
+*@

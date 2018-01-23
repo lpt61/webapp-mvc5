@@ -1,0 +1,14 @@
+﻿@model GreenSol.Domain.Concrete.TextSearch
+
+<div class="form-group">
+    @Html.LabelFor(m => m.SearchTerm, this.Model.LabelText, new { @class = "col-sm-1 control-label" })
+    <div class="col-sm-2">
+        @Html.EnumDropDownListFor(m => m.Comparator, new { @class = "form-control" })
+    </div>
+    <div class="col-sm-9">
+        @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.Property)
+    @Html.HiddenFor(m => m.TargetTypeName)
+    @Html.Hidden("ModelTypeName", this.Model.GetType().AssemblyQualifiedName)
+</div>

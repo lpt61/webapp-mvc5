@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenSol.Domain", "GreenSol.Domain\GreenSol.Domain.csproj", "{43275C43-2495-445D-8018-629AC1A41657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenSol.UI", "GreenSol.UI\GreenSol.UI.csproj", "{9A21CD7B-4F02-414A-ABFE-36309C01323C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43275C43-2495-445D-8018-629AC1A41657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43275C43-2495-445D-8018-629AC1A41657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43275C43-2495-445D-8018-629AC1A41657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43275C43-2495-445D-8018-629AC1A41657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A21CD7B-4F02-414A-ABFE-36309C01323C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A21CD7B-4F02-414A-ABFE-36309C01323C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A21CD7B-4F02-414A-ABFE-36309C01323C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A21CD7B-4F02-414A-ABFE-36309C01323C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

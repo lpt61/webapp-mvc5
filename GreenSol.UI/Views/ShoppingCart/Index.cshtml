@@ -1,0 +1,147 @@
+﻿@model GreenSol.UI.Models.ShoppingCartViewModel
+
+@{
+    ViewBag.Title = "GreenSol: Your Cart";
+}
+
+<h2>Your cart</h2>
+<table id="cartTable" class="table">
+    <thead>
+        <tr>
+            <th>Album</th>
+            <th>Quantity</th>
+            <th class="text-left">Price ($)</th>
+            <th class="text-right">Subtotal ($)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.Lines)
+        {
+            <tr>
+                <td class="text-left">@line.Album.Name</td>
+                <td class="text-left">
+                    @*<input class="quantity" type="number" min="1" value="@line.Count"/>*@
+                   
+                    @using (Ajax.BeginForm("RemoveFromCart", "ShoppingCart", new { lineId = line.LineId }, new AjaxOptions
+                        {
+                            HttpMethod = "Post",
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "cart-summary",
+                            OnSuccess = "UpdateCart"
+                        },
+                        new { @style="display:inline-block"}))
+                    {
+                        <div>
+                            <input class="quantityBtn" type="submit" value="&lt;&lt;" />
+                        </div>
+                    }
+                    <text class="item-count">@line.Count</text>
+                    @using (Ajax.BeginForm("AddToCartJSON", "ShoppingCart", new { albumId = line.AlbumId}, new AjaxOptions
+                        {
+                            HttpMethod = "Post",
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "cart-summary",
+                            OnSuccess = "UpdateCart"
+                        },
+                        new { @style = "display:inline-block" }))
+                    {
+                        <div>
+                            <input class="quantityBtn" type="submit" value="&gt;&gt;" />
+                        </div>
+                    }
+
+                </td>
+                <td class="text-left">@line.Album.Price.ToString()</td>
+                <td class="text-right">
+                    <text class="subtotal">@((line.Count * line.Album.Price).ToString())
+                </td>
+                <td>
+                    @using (Html.BeginForm("RemoveCart", "ShoppingCart"))
+                    {
+                        @Html.Hidden("LineId", line.LineId)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="myButton2 orange2" type="submit" value="Remove" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">
+                @Model.TotalPrice.ToString("c")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="text-center">
+    <a class="myButton2 blue2" href="@Model.ReturnUrl">Continue shopping</a>
+    @Html.ActionLink("Checkout now", "Checkout", null, new { 
+        @class = "myButton2 green2",
+        @style = (Model.Lines.Count == 0 ? "display:none;" : "") + "padding: 9px 35px;"})
+</div>
+
+<script type="text/javascript">
+    /*$(document).on('change', '.quantity', function () {
+        $.ajax({
+            async:true,
+            cache: false,
+            url: "/ShoppingCart/RemoveFromCart",
+            method: "Post",
+            data: {
+                lineId: $(document).find($('#LineId')).val(),
+                quantity: 1
+            },
+            success: "RemoveFromCart"
+        })
+    })
+    */
+
+    var index = -1;
+    $("input[type=submit]").click(function (event) {
+        index = $(this).parent().closest('tr').index();
+    });
+
+    function UpdateCart(data) {
+        $('.item-count:eq(' + index + ')').text(data.Quantity);
+        $('.subtotal:eq(' + index + ')').text(data.Subtotal);
+        $('#cart-summary').html(data.TotalItem + ' item(s),' + data.TotalPrice + ' $');
+    }
+</script>
+
+<style>
+    #cartTable td {
+        vertical-align: middle;
+    }
+
+    input.quantity {
+        width: 50px;
+        background-color: transparent !important;
+        border: none !important;
+    }
+
+        input.quantity:focus {
+            outline: none;
+        }
+
+    input.quantityBtn:focus {
+        outline: none;
+    }
+
+    input.quantityBtn {
+        border-style: none;
+        background: transparent;
+    }
+
+    input.quantityBtn {
+        border-style: none;
+        background: transparent;
+    }
+
+        input.quantityBtn:hover {
+            color: #77a118;
+        }
+</style>
+

@@ -1,0 +1,145 @@
+﻿@using GreenSol.Domain.Entities
+@model GreenSol.UI.Models.AlbumsListViewModel
+
+@{
+    ViewBag.Title = "Albums";
+}
+
+@foreach (Album a in Model.Albums)
+{
+    @Html.Partial("AlbumSummary", a)
+}
+
+<div style="margin: 40px 0 70px;">
+    <div style="position: relative;display: inline-block; bottom: 10px;">
+        <label style="padding-bottom:1px; font-weight:300">Items per page:</label>
+        <input id="itemsPerPage" class="form-control" type="number" min="5" value="@Model.PagingInfo.ItemsPerPage" />
+        <button id="refresh" class="myButton2 green2" style="width: 80px">
+            Refresh
+        </button>
+        <p class="text-danger" style="display:none"><b>Please inter a positive value.</b></p>
+    </div>
+
+    <div class="pages btn-group pull-right">
+        <btn class="prevBtn btn btn-default">&lt;&lt;</btn>
+        @Html.PageLinks(Model.PagingInfo, x => @Url.Action("List", "Album", new { page = x, genre = Model.CurrentGenre }))
+        <btn class="nextBtn btn btn-default">&gt;&gt;</btn>
+    </div>
+</div>
+
+
+<style type="text/css">
+    .form-control {
+        padding: 6px 12px 4px 6px !important; 
+    }
+    #itemsPerPage {
+        width:70px; 
+        height:36px; 
+        margin-bottom:5px; 
+        display: inline-block;
+    }
+
+    .btn{
+        border-radius:0 !important
+    }
+
+    .pages a.selected,
+    .pages a:hover, 
+    .pages btn:hover  {
+        border-color: #9a9a9a !important; 
+    }
+    .btn-default{
+        text-shadow: none;
+        box-shadow: none !important;
+        background-image: none !important;
+        color: #333;
+        background-color: transparent !important; 
+        border-color: transparent !important; 
+    }
+
+    .btn-primary:hover {
+        color: #333 !important;
+    }
+</style>
+
+@section Scripts{
+    <script type="text/javascript">
+        //Show only a set of 10 pages
+        $(function () {
+            var current = $('.pages a.selected').index(),  @* = @Model.PagingInfo.CurrentPage *@
+                left = current - 1,
+                right = current + 1,
+                last = current - (current % 10) + 10,   //the last page in the set of 10
+                pageLinks = $('.pages a');
+
+            pageLinks.css('display', 'none');
+
+            $('.pages a:nth-child(' + (current + 1) + ')').css('display', 'inline-block');
+
+            while (left % 10 >= 1) {
+                $('.pages a:nth-child(' + (left + 1) + ')').css('display', 'inline-block');
+                left--;
+            };
+
+            while ((right <= last) && (current % 10 != 0)) {
+                $('.pages a:nth-child(' + (right + 1) + ')').css('display', 'inline-block');
+                right++;
+            };
+
+            //go to next 10 pages
+            $('.nextBtn').on('click', function () {
+                if (current == pageLinks.length) {
+                    //disable the button
+                    $('.nextBtn').off();
+                }
+                else {
+                    //if next 10 pages exceed total pages, go to the last page
+                    if (current + 10 > pageLinks.length)  @* pageLinks.length = @Model.PagingInfo.TotalPages *@
+                        location.href = '@Url.Action("List", "Album", new {
+                                            page = Model.PagingInfo.TotalPages ,
+                                            genre = Model.CurrentGenre })';
+                    else
+                        location.href = '@Url.Action("List", "Album", new {
+                                            page = Model.PagingInfo.CurrentPage + 10,
+                                            genre = Model.CurrentGenre })';
+                }
+            });
+
+            //go to previous 10 pages
+            $('.prevBtn').on('click', function () {
+                if (current == 1){
+                    $('.prevBtn').off();
+                }
+                else {
+                    //if previous 10 pages are out of index, go to Page1
+                    if (current - 10 <= 0) {
+                        location.href = '@Url.Action("List", "Album", new {
+                                            page = 1,
+                                            genre = Model.CurrentGenre })';
+                    }
+                    else {
+                        location.href = '@Url.Action("List", "Album", new {
+                                            page = Model.PagingInfo.CurrentPage - 10,
+                                            genre = Model.CurrentGenre })';
+                    }
+                }
+            });
+        })
+
+        $(function () {
+            $('#refresh').on('click', function () {
+                //validate page size value
+                if ( parseInt($(('#itemsPerPage')).val()) <= 1) {
+                    $('#itemsPerPage').addClass('input-validation-error');
+                    $('.text-danger').css('display', 'inline-block');
+                }
+                else {
+                    location.href = '@Url.Action("List", "Album", new {
+                                        page = Model.PagingInfo.CurrentPage,
+                                        genre = Model.CurrentGenre, })'
+                                        + '?pageSize=' + $('#itemsPerPage').val();
+                }
+            })
+        })
+    </script>
+    }

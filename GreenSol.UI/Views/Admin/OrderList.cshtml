@@ -1,0 +1,135 @@
+﻿@using GreenSol.Domain.Entities
+@model IEnumerable<GreenSol.UI.Models.OrderHistoryModel>
+@{
+    ViewBag.Title = "OrderList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel panel-default" style="padding:20px;">
+    <div style="padding-left: 15px;">
+        <h2 style="margin-bottom:50px">Order list</h2>
+    </div>
+
+    <div class="form-group">
+        <table class="table table-condensed table-responsive">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Details</th>
+                    <th>Order date</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th style="width: 10vw;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="order-@item.OrderDetailsId">
+                        <td>@item.OrderDetailsId</td>
+                        <td>
+                            <ul>
+                                @foreach (var subItem in item.Orders)
+                                {
+                                    <li>@subItem.Quantity x @subItem.Album.Name</li>
+                                }
+                            </ul>
+                        </td>
+                        <td>@item.OrderDate</td>
+                        <td>@item.Total $</td>
+                        <td id="@item.OrderDetailsId-status">@item.Status</td>
+                        <td id="@item.OrderDetailsId-process">
+                            <div>
+                                @if (item.Status.ToString() == "Processing")
+                                {
+                                    @*<button id="deliverBtn-" + @item.OrderDetailsId type="submit" class="myButton2 blue2 deliver activeBtn" style="padding:5px 10px; width:150px;">Deliver</button>*@
+                                    @Ajax.ActionLink("Deliver", "ProcessOrder", new { id = item.OrderDetailsId, status = Status.Delivering },
+                                new AjaxOptions
+                                {
+                                    HttpMethod = "Post",
+                                    InsertionMode = InsertionMode.Replace,
+                                    UpdateTargetId = @item.OrderDetailsId + "-status",
+                                    OnSuccess = "ProcessOrder"
+                                },
+                                new
+                                {
+                                    @id = item.OrderDetailsId,
+                                    @class = "myButton2 blue2 deliver",
+                                    @style = "padding:5px 17px"
+                                })
+                                    @Ajax.ActionLink("Complete", "ProcessOrder", new { id = item.OrderDetailsId, status = Status.Delivered },
+                                new AjaxOptions
+                                {
+                                    HttpMethod = "Post",
+                                    InsertionMode = InsertionMode.Replace,
+                                    UpdateTargetId = @item.OrderDetailsId + "-status",
+                                    OnSuccess = "CompleteOrder"
+                                },
+                                new
+                                {
+                                    @id = item.OrderDetailsId,
+                                    @class = "myButton2 green2 complete invisible",
+                                    @style = "padding:5px 10px"
+                                })
+                                }
+                                else
+                                {
+                                    @*<button id="completeBtn-" + @item.OrderDetailsId type="submit" class="myButton2 green2 complete deactive" style="padding:5px 10px; width:150px;">Complete</button>*@
+                                    @Ajax.ActionLink("Complete", "ProcessOrder", new { id = item.OrderDetailsId, status = Status.Delivered },
+                                new AjaxOptions
+                                {
+                                    HttpMethod = "Post",
+                                    InsertionMode = InsertionMode.Replace,
+                                    UpdateTargetId = @item.OrderDetailsId + "-status",
+                                    OnSuccess = "CompleteOrder"
+                                },
+                                new
+                                {
+                                    @id = item.OrderDetailsId,
+                                    @class = "myButton2 green2 complete",
+                                    @style = "padding:5px 10px"
+                                })
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    @*<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>*@
+    <script type="text/javascript">
+        function ProcessOrder(data) {
+            //Find the chosen order
+            var id = $(this).attr("id");
+
+            //remove the deliver button
+            $(this).remove();
+
+            //show the complete button
+            //The deliver and complete <a> tag have the same id, so I use class to identify the complete <a> tag
+            $("#" + id + ".complete").removeClass("invisible");
+        }
+
+        function CompleteOrder(data) {
+            //Find the chosen order
+            var id = $(this).attr("id");
+
+            //Since the order has been completed, remove the entire record from the view
+            $("#order-" + id).remove();
+        }
+
+    </script>
+
+    <style type="text/css">
+        td {
+            border: none !important;
+            padding: 10px !important;
+        }
+    </style>
+
+
+
