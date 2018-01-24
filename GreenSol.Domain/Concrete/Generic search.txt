@@ -1,0 +1,7 @@
+﻿My seach function uses the generic search source code by Daniel Palme, I modified it a bit to suit my needs.
+I could implement the seach function by using LINQ, but if the number of criteria grows, 
+I think generic search would be better.
+
+Daniel Palme's source code is here:
+
+http://www.palmmedia.de/blog/2012/2/18/aspnet-mvc-generic-filtering-based-on-expressions

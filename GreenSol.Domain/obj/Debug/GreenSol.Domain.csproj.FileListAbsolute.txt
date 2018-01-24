@@ -179,3 +179,46 @@ E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Dom
 E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.csproj.GenerateResource.Cache
 E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.dll
 E:\GREENSOL\GREENSOL FINAL\GreenSol_24_10\GreenSol.Domain\obj\Debug\GreenSol.Domain.pdb
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll.config
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\GreenSol.Domain.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\GreenSol.Domain.pdb
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\EntityFramework.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.Owin.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Newtonsoft.Json.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Owin.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.Helpers.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.Mvc.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.Razor.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.WebPages.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\EntityFramework.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.Owin.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\Newtonsoft.Json.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.Helpers.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.Mvc.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.Razor.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.WebPages.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\obj\Debug\GreenSol.Domain.csprojResolveAssemblyReference.cache
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\obj\Debug\GreenSol.Domain.EFDbContextMigrations.201711051234443_CustomerIdProperty.resources
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\obj\Debug\GreenSol.Domain.EFDbContextMigrations.201711171337496_EmailProperty.resources
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\obj\Debug\GreenSol.Domain.csproj.GenerateResource.Cache
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\obj\Debug\GreenSol.Domain.dll
+E:\Projects on Git\webapp-mvc5\GreenSol.Domain\obj\Debug\GreenSol.Domain.pdb

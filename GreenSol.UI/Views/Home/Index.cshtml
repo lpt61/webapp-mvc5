@@ -84,7 +84,7 @@
         <div class="vw50 js-text-wrapper description-text-left" style="padding-top: 20%;">
             <div style="position: relative; top: 25vh;">
                 <div class="feature-wrapper">
-                    <div class="feature js-active" id="js-pFt1">
+                    <div class="feature js-ft-active" id="js-pFt1">
                         <h2 class="fix-space-ie">Membership special offers<br></h2>
                         <p class="text">
                             Become a member to get a special album every day at an amazing price. So, join us and grab your favorite artists!
@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="pager" style="transform: translate3d(0%, 0%, 0%);">
-                <button class="single-pager js-active" id="js-pBtn1"></button>
+                <button class="single-pager js-ft-active" id="js-pBtn1"></button>
                 <button class="single-pager" id="js-pBtn2"></button>
                 <button class="single-pager" id="js-pBtn3"></button>
             </div>  
@@ -111,7 +111,7 @@
             <div class="description-graphic container outdoor" style="display:block">
                 <div class="js-feature-image image-container">
                     <img alt="">
-                    <img id="js-pImg1" class="js-active" alt="wix map feature" src="~/Content/index/Images/member.jpg">
+                    <img id="js-pImg1" class="js-ft-active" alt="wix map feature" src="~/Content/index/Images/member.jpg">
                     <img id="js-pImg2" alt="quality" src="~/Content/index/Images/quality.jpg">
                     <img id="js-pImg3" alt="quality" src="~/Content/Images/largeImage_girl.jpg">
                 </div>
@@ -277,13 +277,13 @@
     /*Switch features*/
     $(document).on('click', '.pager button', function () {
         /*current active button*/
-        var currentButton = $('.pager .js-active');
+        var currentButton = $('.pager .js-ft-active');
 
         /*current active image*/
-        var currentImg = $(".js-feature-image .js-active");
+        var currentImg = $(".js-feature-image .js-ft-active");
 
         /*current active text*/
-        var currentFeature = $(".feature.js-active");
+        var currentFeature = $(".feature.js-ft-active");
 
         /*get the index of the clicked button*/
         var i = $(this).attr('id').charAt($(this).attr('id').length - 1);
@@ -292,17 +292,17 @@
         if (currentButton.attr('id') != $(this).attr('id')) {
             $('.js-feature-image').css('transform', 'translateX(999%)');
 
-            $('#js-pFt' + i).addClass('js-active');
-            $('#js-pBtn' + i).addClass('js-active');
-            $('#js-pImg' + i).addClass('js-active');
+            $('#js-pFt' + i).addClass('js-ft-active');
+            $('#js-pBtn' + i).addClass('js-ft-active');
+            $('#js-pImg' + i).addClass('js-ft-active');
 
-            currentFeature.removeClass('js-active');
-            currentButton.removeClass('js-active');
-            currentImg.removeClass('js-active');
+            currentFeature.removeClass('js-ft-active');
+            currentButton.removeClass('js-ft-active');
+            currentImg.removeClass('js-ft-active');
 
             setTimeout(function () {                                /**/
                 $('.js-feature-image').css('transform', 'translateX(0%)');
-            }, duration);
+            }, 500);
         }
     });
 </script>

@@ -337,7 +337,7 @@ body.reg .sb-wrapper {
    opacity : 0
 }
 
-.feature.js-active {
+.feature.js-ft-active {
     text-align: center;
     -webkit-transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
@@ -476,11 +476,11 @@ body.reg .sb-wrapper {
     outline:none;
 }
 
-.single-pager.js-active{
+.single-pager.js-ft-active{
     background: #2c2d33
 }
 
-.js-feature-image img.js-active{
+.js-feature-image img.js-ft-active{
     opacity:1;
 }
 
@@ -488,7 +488,7 @@ body.reg .sb-wrapper {
     transform: translate3d(999%, 0, 0);
 }
 
-.js-feature-image img#js-pImg1.js-active{
+.js-feature-image img#js-pImg1.js-ft-active{
     transform: translate3d(0,0,0);
 }
 
@@ -496,7 +496,7 @@ body.reg .sb-wrapper {
     transform: translate3d(999%, -100%, 0);
 }
 
-.js-feature-image img#js-pImg2.js-active{
+.js-feature-image img#js-pImg2.js-ft-active{
     transform: translate3d(0%, -100%, 0);
 }
 
@@ -504,6 +504,6 @@ body.reg .sb-wrapper {
     transform: translate3d(999%, -200%, 0);
 }
 
-.js-feature-image img#js-pImg3.js-active{
+.js-feature-image img#js-pImg3.js-ft-active{
     transform: translate3d(0%, -200%, 0);
 }
